@@ -11,5 +11,6 @@
 @interface SAFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UINavigationController *rootController;
 
 @end

@@ -13,4 +13,10 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <MagicalRecord/CoreData+MagicalRecord.h>
+    #import <MSWeakTimer/MSWeakTimer.h>
+    #import <TOMSMorphingLabel/TOMSMorphingLabel.h>
+    #import <DateTools/DateTools.h>
+    #import <HexColors/HexColor.h>
+    #import <HockeySDK/HockeySDK.h>
 #endif
