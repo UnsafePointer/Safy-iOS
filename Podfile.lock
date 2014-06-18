@@ -1,0 +1,10 @@
+PODS:
+  - TOMSMorphingLabel (0.1.0)
+
+DEPENDENCIES:
+  - TOMSMorphingLabel (~> 0.1.0)
+
+SPEC CHECKSUMS:
+  TOMSMorphingLabel: 6b573950bbf8a898cdf85f76fe2e2379b11e3c35
+
+COCOAPODS: 0.33.1
