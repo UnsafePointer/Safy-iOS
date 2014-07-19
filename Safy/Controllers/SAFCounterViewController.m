@@ -9,6 +9,7 @@
 #import "SAFCounterViewController.h"
 #import "SAFSafy.h"
 #import "SAFTime.h"
+#import "SAFSettingsTableViewController.h"
 
 @interface SAFCounterViewController ()
 
@@ -16,11 +17,11 @@
 @property (nonatomic, strong) SAFSafy *safy;
 @property (nonatomic, weak) TOMSMorphingLabel *tickLabel;
 @property (nonatomic, weak) TOMSMorphingLabel *safyLabel;
+@property (nonatomic, strong) UIPopoverController *settingsController;
 
 - (void)findSelectedSafyAndStartTime;
 - (void)setupLabels;
-- (void)setupSettingsButton;
-- (void)setupChartsButton;
+- (void)setupNavigationItemButtons;
 - (void)tick:(id)sender;
 - (void)oops:(id)sender;
 - (void)charts:(id)sender;
@@ -46,8 +47,7 @@
     [super viewDidLoad];
     [self setupLabels];
     [self findSelectedSafyAndStartTime];
-    [self setupSettingsButton];
-    [self setupChartsButton];
+    [self setupNavigationItemButtons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,24 +57,19 @@
 
 #pragma mark - Private methods
 
-- (void)setupSettingsButton
+- (void)setupNavigationItemButtons
 {
     UIBarButtonItem *btnSettings = [[UIBarButtonItem alloc]
                                     initWithImage:[UIImage imageNamed:@"Settings"]
                                     style:UIBarButtonItemStyleBordered
                                     target:self
                                     action:@selector(settings:)];
-    self.navigationItem.leftBarButtonItem = btnSettings;
-}
-
-- (void)setupChartsButton
-{
     UIBarButtonItem *btnCharts = [[UIBarButtonItem alloc]
                                   initWithImage:[UIImage imageNamed:@"Chart"]
                                   style:UIBarButtonItemStyleBordered
                                   target:self
                                   action:@selector(charts:)];
-    self.navigationItem.rightBarButtonItem = btnCharts;
+    self.navigationItem.rightBarButtonItems = @[btnCharts, btnSettings];
 }
 
 - (void)setupLabels
@@ -99,7 +94,7 @@
     safyLabel.font = [UIFont systemFontOfSize:60.0f];
     safyLabel.textColor = [UIColor colorWithHexString:@"#FF5E3A"];
     safyLabel.numberOfLines = 0;
-    [safyLabel setText:@"... without a push notification issue"];
+    [safyLabel setText:@"... without a ... issue"];
     [self.view addSubview:safyLabel];
     self.safyLabel = safyLabel;
     UIButton *oopsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -180,7 +175,13 @@
 
 - (void)settings:(id)sender
 {
-    
+    SAFSettingsTableViewController *viewController = [[SAFSettingsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    [popoverController presentPopoverFromBarButtonItem:sender
+                              permittedArrowDirections:UIPopoverArrowDirectionUp
+                                              animated:YES];
+    self.settingsController = popoverController;
 }
 
 @end

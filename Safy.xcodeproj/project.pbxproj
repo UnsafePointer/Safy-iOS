@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18C95A00134849098895DB87 /* libPods-Safy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */; };
+		A01F4D5D197A822C00B1FC38 /* SAFSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */; };
 		A0967E131951DAB80083CAE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E121951DAB80083CAE1 /* Foundation.framework */; };
 		A0967E151951DAB80083CAE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E141951DAB80083CAE1 /* CoreGraphics.framework */; };
 		A0967E171951DAB80083CAE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E161951DAB80083CAE1 /* UIKit.framework */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Safy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01F4D5B197A822C00B1FC38 /* SAFSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFSettingsTableViewController.h; path = Controllers/SAFSettingsTableViewController.h; sourceTree = "<group>"; };
+		A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFSettingsTableViewController.m; path = Controllers/SAFSettingsTableViewController.m; sourceTree = "<group>"; };
 		A0967E0F1951DAB80083CAE1 /* Safy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0967E121951DAB80083CAE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0967E141951DAB80083CAE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 			children = (
 				A0967E5B1951DF150083CAE1 /* SAFCounterViewController.h */,
 				A0967E5C1951DF150083CAE1 /* SAFCounterViewController.m */,
+				A01F4D5B197A822C00B1FC38 /* SAFSettingsTableViewController.h */,
+				A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				A0967E741951E8660083CAE1 /* SAFSafy.m in Sources */,
 				A0967E4A1951DB060083CAE1 /* main.m in Sources */,
 				A0967E441951DB000083CAE1 /* SAFAppDelegate.m in Sources */,
+				A01F4D5D197A822C00B1FC38 /* SAFSettingsTableViewController.m in Sources */,
 				A0967E5E1951DF150083CAE1 /* SAFCounterViewController.m in Sources */,
 				A0967E511951DD780083CAE1 /* Model.xcdatamodeld in Sources */,
 			);
