@@ -8,7 +8,6 @@
 
 #import "SAFCreateSafyFormViewController.h"
 #import "SAFCreateSafyForm.h"
-#import "TLAlertView.h"
 
 @interface SAFCreateSafyFormViewController ()
 
@@ -43,10 +42,7 @@
 {
     SAFCreateSafyForm *form = self.formController.form;
     if ([form.name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
-        TLAlertView *alertView = [[TLAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"Name can't be empty."
-                                                        buttonTitle:@"OK"];
-        [alertView show];
+        
     }
 }
 
