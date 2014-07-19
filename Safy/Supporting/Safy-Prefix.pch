@@ -20,4 +20,5 @@
     #import <HexColors/HexColor.h>
     #import <FXForms/FXForms.h>
     #import <libextobjc/EXTScope.h>
+    #import <ActiveSupportInflector/NSString+ActiveSupportInflector.h>
 #endif

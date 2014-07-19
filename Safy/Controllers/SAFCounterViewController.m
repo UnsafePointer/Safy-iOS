@@ -10,6 +10,7 @@
 #import "SAFSafy.h"
 #import "SAFTime.h"
 #import "SAFPickTableViewController.h"
+#import "SAFChartViewController.h"
 
 @interface SAFCounterViewController () <SAFPickTableViewControllerDelegate>
 
@@ -94,7 +95,7 @@
     safyLabel.font = [UIFont systemFontOfSize:60.0f];
     safyLabel.textColor = [UIColor colorWithHexString:@"#FF5E3A"];
     safyLabel.numberOfLines = 0;
-    [safyLabel setText:@"... without a ... issue"];
+    [safyLabel setText:@"... without any ..."];
     [self.view addSubview:safyLabel];
     self.safyLabel = safyLabel;
     UIButton *oopsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -156,15 +157,19 @@
                        (long)[aDateComponents minute],
                        (long)[aDateComponents second]];
     [self.tickLabel setText:print];
-    [self.safyLabel setText:[NSString stringWithFormat:@"%@ without a %@",
+    [self.safyLabel setText:[NSString stringWithFormat:@"%@ without any %@",
                              [self.safy.currentStartDate.timeAgoSinceNow stringByReplacingOccurrencesOfString:@" ago"
                                                                                                    withString:@""],
-                             self.safy.text]];
+                             [self.safy.text lowercaseString]]];
 }
 
 - (void)charts:(id)sender
 {
-    
+    SAFChartViewController *viewController = [[SAFChartViewController alloc] initWithNibName:nil
+                                                                                      bundle:nil];
+    viewController.safy = self.safy;
+    [self.navigationController pushViewController:viewController
+                                         animated:YES];
 }
 
 - (void)oops:(id)sender

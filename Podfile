@@ -9,4 +9,5 @@ target "Safy" do
   pod 'FXForms', '~> 1.1.6'
   pod 'TSMessages', '~> 0.9.9'
   pod 'libextobjc', '~> 0.4.0'
+  pod 'ActiveSupportInflector', '~> 0.0.1'
 end

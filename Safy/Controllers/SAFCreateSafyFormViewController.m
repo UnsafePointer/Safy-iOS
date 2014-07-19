@@ -54,7 +54,7 @@
     }
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         SAFSafy *safy = [SAFSafy MR_createInContext:localContext];
-        safy.text = form.name;
+        safy.text = [[form.name pluralizeString] capitalizedString];
         safy.selected = [NSNumber numberWithBool:NO];
         safy.currentStartDate = [NSDate date];
     }];
