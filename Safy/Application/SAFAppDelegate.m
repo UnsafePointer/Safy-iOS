@@ -14,7 +14,6 @@
 @interface SAFAppDelegate ()
 
 - (void)seedDataIfNeeded;
-- (void)setupHockeyApp;
 
 @end
 
@@ -29,7 +28,6 @@
     self.window.tintColor = [UIColor colorWithHexString:@"#FF9500"];
     [self.window makeKeyAndVisible];
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    [self setupHockeyApp];
     [self seedDataIfNeeded];
     SAFCounterViewController *viewController = [[SAFCounterViewController alloc]
                                                 initWithNibName:nil
@@ -58,13 +56,6 @@
             safy.currentStartDate = [NSDate date];
         }];
     }
-}
-
-- (void)setupHockeyApp
-{
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"64db8968609df02bde0eedf1faa6ba87"];
-    [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
 }
 
 @end

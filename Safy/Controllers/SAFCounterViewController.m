@@ -20,8 +20,10 @@
 - (void)findSelectedSafyAndStartTime;
 - (void)setupLabels;
 - (void)setupSettingsButton;
+- (void)setupChartsButton;
 - (void)tick:(id)sender;
 - (void)oops:(id)sender;
+- (void)charts:(id)sender;
 - (void)settings:(id)sender;
 
 @end
@@ -45,6 +47,7 @@
     [self setupLabels];
     [self findSelectedSafyAndStartTime];
     [self setupSettingsButton];
+    [self setupChartsButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +65,16 @@
                                     target:self
                                     action:@selector(settings:)];
     self.navigationItem.leftBarButtonItem = btnSettings;
+}
+
+- (void)setupChartsButton
+{
+    UIBarButtonItem *btnCharts = [[UIBarButtonItem alloc]
+                                  initWithImage:[UIImage imageNamed:@"Chart"]
+                                  style:UIBarButtonItemStyleBordered
+                                  target:self
+                                  action:@selector(charts:)];
+    self.navigationItem.rightBarButtonItem = btnCharts;
 }
 
 - (void)setupLabels
@@ -142,6 +155,11 @@
                              [self.safy.currentStartDate.timeAgoSinceNow stringByReplacingOccurrencesOfString:@" ago"
                                                                                                    withString:@""],
                              self.safy.text]];
+}
+
+- (void)charts:(id)sender
+{
+    
 }
 
 - (void)oops:(id)sender
