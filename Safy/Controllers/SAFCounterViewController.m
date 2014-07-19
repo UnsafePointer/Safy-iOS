@@ -132,6 +132,15 @@
 
 - (void)charts:(id)sender
 {
+    if (self.safy.times.count <= 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Not enough data to build a graph."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
     SAFChartViewController *viewController = [[SAFChartViewController alloc] initWithNibName:nil
                                                                                       bundle:nil];
     viewController.safy = self.safy;

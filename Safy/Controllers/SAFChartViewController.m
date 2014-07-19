@@ -24,6 +24,8 @@
 
 @implementation SAFChartViewController
 
+static int const kMaxGraphLenght = 12;
+
 typedef NS_ENUM(NSInteger, SAFChartType) {
     SAFChartTypeSeconds,
     SAFChartTypeMinutes,
@@ -113,9 +115,16 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
 
 - (NSArray *)generateDataSource
 {
-    NSMutableArray *dataSource = [[NSMutableArray alloc] initWithCapacity:self.safy.times.count];
-    [dataSource addObject:@0];
-    for (SAFTime *time in self.safy.times) {
+    NSMutableArray *dataSource = [[NSMutableArray alloc] init];
+    NSArray *iterable;
+    if (self.safy.times.count >= kMaxGraphLenght) {
+        iterable = [self.safy.times objectsAtIndexes:[NSIndexSet
+                                                      indexSetWithIndexesInRange:
+                                                      NSMakeRange(self.safy.times.count - kMaxGraphLenght, kMaxGraphLenght)]];
+    } else {
+        iterable = [self.safy.times array];
+    }
+    for (SAFTime *time in iterable) {
         NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:[self calendarUnitForSelection]
                                                                            fromDate:time.startDate
                                                                              toDate:time.endDate
@@ -129,10 +138,16 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
 {
     NSMutableArray *XLabels = [[NSMutableArray alloc] initWithCapacity:self.safy.times.count];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd"];
-    SAFTime *firstTime = [self.safy.times objectAtIndex:0];
-    [XLabels addObject:[dateFormatter stringFromDate:firstTime.startDate]];
-    for (SAFTime *time in self.safy.times) {
+    [dateFormatter setDateFormat:@"MM-dd-yy"];
+    NSArray *iterable;
+    if (self.safy.times.count >= kMaxGraphLenght) {
+        iterable = [self.safy.times objectsAtIndexes:[NSIndexSet
+                                                      indexSetWithIndexesInRange:
+                                                      NSMakeRange(self.safy.times.count - kMaxGraphLenght, kMaxGraphLenght)]];
+    } else {
+        iterable = [self.safy.times array];
+    }
+    for (SAFTime *time in iterable) {
         [XLabels addObject:[dateFormatter stringFromDate:time.endDate]];
     }
     return [XLabels copy];

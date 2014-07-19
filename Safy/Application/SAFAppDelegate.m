@@ -14,6 +14,7 @@
 @interface SAFAppDelegate ()
 
 - (void)seedDataIfNeeded;
+- (void)seedTestData;
 
 @end
 
@@ -56,6 +57,25 @@
             safy.currentStartDate = [NSDate date];
         }];
     }
+}
+
+- (void)seedTestData
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        SAFSafy *safy = [SAFSafy MR_createInContext:localContext];
+        safy.text = @"Accidents";
+        safy.selected = [NSNumber numberWithBool:YES];
+        safy.currentStartDate = [NSDate date];
+        NSDate *pivotDate = safy.currentStartDate;
+        for (int i = 0; i < 50; i++) {
+            SAFTime *time = [SAFTime MR_createInContext:localContext];
+            time.endDate = pivotDate;
+            pivotDate = [pivotDate dateBySubtractingDays:arc4random() % 20 + 1];
+            time.startDate = pivotDate;
+            [[safy timesSet] insertObject:time
+                                  atIndex:0];
+        }
+    }];
 }
 
 @end
