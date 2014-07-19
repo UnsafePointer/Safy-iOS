@@ -18,5 +18,5 @@
     #import <TOMSMorphingLabel/TOMSMorphingLabel.h>
     #import <DateTools/DateTools.h>
     #import <HexColors/HexColor.h>
-    #import <HockeySDK/HockeySDK.h>
+    #import <FXForms/FXForms.h>
 #endif

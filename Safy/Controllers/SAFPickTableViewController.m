@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Renzo Crisóstomo. All rights reserved.
 //
 
-#import "SAFSettingsTableViewController.h"
+#import "SAFPickTableViewController.h"
 #import "SAFSafy.h"
+#import "SAFCreateSafyFormViewController.h"
 
-@interface SAFSettingsTableViewController ()
+@interface SAFPickTableViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -18,7 +19,7 @@
 
 @end
 
-@implementation SAFSettingsTableViewController
+@implementation SAFPickTableViewController
 
 static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
@@ -26,7 +27,7 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title = @"Settings";
+        self.title = @"Pick";
     }
     return self;
 }
@@ -71,7 +72,10 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 - (void)add:(id)sender
 {
-    
+    SAFCreateSafyFormViewController *viewController = [[SAFCreateSafyFormViewController alloc] initWithNibName:nil
+                                                                                                        bundle:nil];
+    [self.navigationController pushViewController:viewController
+                                         animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

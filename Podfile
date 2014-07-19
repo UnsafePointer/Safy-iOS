@@ -6,5 +6,6 @@ target "Safy" do
   pod 'MSWeakTimer', '~> 1.1.0'
   pod 'DateTools', '~> 1.3.0'
   pod 'HexColors', '~> 2.2.1'
-  pod 'HockeySDK', '~> 3.5.0'
+  pod 'FXForms', '~> 1.1.6'
+  pod 'TSMessages', '~> 0.9.9'
 end

@@ -9,7 +9,7 @@
 #import "SAFCounterViewController.h"
 #import "SAFSafy.h"
 #import "SAFTime.h"
-#import "SAFSettingsTableViewController.h"
+#import "SAFPickTableViewController.h"
 
 @interface SAFCounterViewController ()
 
@@ -59,17 +59,17 @@
 
 - (void)setupNavigationItemButtons
 {
-    UIBarButtonItem *btnSettings = [[UIBarButtonItem alloc]
-                                    initWithImage:[UIImage imageNamed:@"Settings"]
-                                    style:UIBarButtonItemStyleBordered
-                                    target:self
-                                    action:@selector(settings:)];
+    UIBarButtonItem *btnPick = [[UIBarButtonItem alloc]
+                                initWithImage:[UIImage imageNamed:@"Pick"]
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(settings:)];
     UIBarButtonItem *btnCharts = [[UIBarButtonItem alloc]
                                   initWithImage:[UIImage imageNamed:@"Chart"]
                                   style:UIBarButtonItemStyleBordered
                                   target:self
                                   action:@selector(charts:)];
-    self.navigationItem.rightBarButtonItems = @[btnCharts, btnSettings];
+    self.navigationItem.rightBarButtonItems = @[btnCharts, btnPick];
 }
 
 - (void)setupLabels
@@ -175,7 +175,7 @@
 
 - (void)settings:(id)sender
 {
-    SAFSettingsTableViewController *viewController = [[SAFSettingsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    SAFPickTableViewController *viewController = [[SAFPickTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
     [popoverController presentPopoverFromBarButtonItem:sender

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		18C95A00134849098895DB87 /* libPods-Safy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */; };
-		A01F4D5D197A822C00B1FC38 /* SAFSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */; };
+		A01F4D5D197A822C00B1FC38 /* SAFPickTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5C197A822C00B1FC38 /* SAFPickTableViewController.m */; };
+		A01F4D60197A8C6200B1FC38 /* SAFCreateSafyForm.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5F197A8C6200B1FC38 /* SAFCreateSafyForm.m */; };
+		A01F4D63197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D62197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m */; };
+		A01F4D67197A927600B1FC38 /* TLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D66197A927600B1FC38 /* TLAlertView.m */; };
 		A0967E131951DAB80083CAE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E121951DAB80083CAE1 /* Foundation.framework */; };
 		A0967E151951DAB80083CAE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E141951DAB80083CAE1 /* CoreGraphics.framework */; };
 		A0967E171951DAB80083CAE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E161951DAB80083CAE1 /* UIKit.framework */; };
@@ -25,8 +28,14 @@
 
 /* Begin PBXFileReference section */
 		039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Safy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A01F4D5B197A822C00B1FC38 /* SAFSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFSettingsTableViewController.h; path = Controllers/SAFSettingsTableViewController.h; sourceTree = "<group>"; };
-		A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFSettingsTableViewController.m; path = Controllers/SAFSettingsTableViewController.m; sourceTree = "<group>"; };
+		A01F4D5B197A822C00B1FC38 /* SAFPickTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFPickTableViewController.h; path = Controllers/SAFPickTableViewController.h; sourceTree = "<group>"; };
+		A01F4D5C197A822C00B1FC38 /* SAFPickTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFPickTableViewController.m; path = Controllers/SAFPickTableViewController.m; sourceTree = "<group>"; };
+		A01F4D5E197A8C6200B1FC38 /* SAFCreateSafyForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFCreateSafyForm.h; path = Models/SAFCreateSafyForm.h; sourceTree = "<group>"; };
+		A01F4D5F197A8C6200B1FC38 /* SAFCreateSafyForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFCreateSafyForm.m; path = Models/SAFCreateSafyForm.m; sourceTree = "<group>"; };
+		A01F4D61197A8D5400B1FC38 /* SAFCreateSafyFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFCreateSafyFormViewController.h; path = Controllers/SAFCreateSafyFormViewController.h; sourceTree = "<group>"; };
+		A01F4D62197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFCreateSafyFormViewController.m; path = Controllers/SAFCreateSafyFormViewController.m; sourceTree = "<group>"; };
+		A01F4D65197A927600B1FC38 /* TLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLAlertView.h; path = External/TLAlertView/TLAlertView.h; sourceTree = SOURCE_ROOT; };
+		A01F4D66197A927600B1FC38 /* TLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLAlertView.m; path = External/TLAlertView/TLAlertView.m; sourceTree = SOURCE_ROOT; };
 		A0967E0F1951DAB80083CAE1 /* Safy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0967E121951DAB80083CAE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0967E141951DAB80083CAE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01F4D64197A925F00B1FC38 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				A01F4D65197A927600B1FC38 /* TLAlertView.h */,
+				A01F4D66197A927600B1FC38 /* TLAlertView.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		A0967E061951DAB80083CAE1 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +118,7 @@
 			children = (
 				A0967E411951DABF0083CAE1 /* Application */,
 				A0967E521951DE7C0083CAE1 /* Controllers */,
+				A01F4D64197A925F00B1FC38 /* External */,
 				A0967E241951DAB80083CAE1 /* Images.xcassets */,
 				A0967E621951DF950083CAE1 /* Models */,
 				A0967E191951DAB80083CAE1 /* Supporting */,
@@ -134,8 +153,10 @@
 			children = (
 				A0967E5B1951DF150083CAE1 /* SAFCounterViewController.h */,
 				A0967E5C1951DF150083CAE1 /* SAFCounterViewController.m */,
-				A01F4D5B197A822C00B1FC38 /* SAFSettingsTableViewController.h */,
-				A01F4D5C197A822C00B1FC38 /* SAFSettingsTableViewController.m */,
+				A01F4D5B197A822C00B1FC38 /* SAFPickTableViewController.h */,
+				A01F4D5C197A822C00B1FC38 /* SAFPickTableViewController.m */,
+				A01F4D61197A8D5400B1FC38 /* SAFCreateSafyFormViewController.h */,
+				A01F4D62197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +176,8 @@
 				A0967E671951DFC20083CAE1 /* SAFTime.m */,
 				A0967E721951E8660083CAE1 /* SAFSafy.h */,
 				A0967E731951E8660083CAE1 /* SAFSafy.m */,
+				A01F4D5E197A8C6200B1FC38 /* SAFCreateSafyForm.h */,
+				A01F4D5F197A8C6200B1FC38 /* SAFCreateSafyForm.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -260,12 +283,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0967E681951DFC20083CAE1 /* SAFTime.m in Sources */,
+				A01F4D60197A8C6200B1FC38 /* SAFCreateSafyForm.m in Sources */,
 				A0967E741951E8660083CAE1 /* SAFSafy.m in Sources */,
 				A0967E4A1951DB060083CAE1 /* main.m in Sources */,
 				A0967E441951DB000083CAE1 /* SAFAppDelegate.m in Sources */,
-				A01F4D5D197A822C00B1FC38 /* SAFSettingsTableViewController.m in Sources */,
+				A01F4D63197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m in Sources */,
+				A01F4D5D197A822C00B1FC38 /* SAFPickTableViewController.m in Sources */,
 				A0967E5E1951DF150083CAE1 /* SAFCounterViewController.m in Sources */,
 				A0967E511951DD780083CAE1 /* Model.xcdatamodeld in Sources */,
+				A01F4D67197A927600B1FC38 /* TLAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
