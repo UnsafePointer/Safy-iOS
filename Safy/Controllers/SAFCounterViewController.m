@@ -19,7 +19,7 @@
 @property (nonatomic, weak) TOMSMorphingLabel *safyLabel;
 @property (nonatomic, strong) UIPopoverController *settingsController;
 
-- (void)findSelectedSafyAndStartTime;
+- (void)findSelectedSafyAndStartTimer;
 - (void)setupLabels;
 - (void)setupNavigationItemButtons;
 - (void)tick:(id)sender;
@@ -46,7 +46,7 @@
 {
     [super viewDidLoad];
     [self setupLabels];
-    [self findSelectedSafyAndStartTime];
+    [self findSelectedSafyAndStartTimer];
     [self setupNavigationItemButtons];
 }
 
@@ -112,10 +112,15 @@
          forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)findSelectedSafyAndStartTime
+- (void)findSelectedSafyAndStartTimer
 {
+    @weakify(self);
+    
     NSManagedObjectContext *privateContext = [NSManagedObjectContext MR_context];
     [privateContext performBlock:^{
+        
+        @strongify(self);
+        
         NSArray *privateObjects = [SAFSafy MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"selected == %@",
                                                                     [NSNumber numberWithBool:YES]]
                                                          inContext:privateContext];
@@ -124,15 +129,20 @@
             NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjectIDs];
             NSArray *results = [SAFSafy MR_findAllWithPredicate:mainPredicate];
             self.safy = [results firstObject];
-            self.timer = [MSWeakTimer
-                          scheduledTimerWithTimeInterval:1.0f
-                          target:self
-                          selector:@selector(tick:)
-                          userInfo:nil
-                          repeats:YES
-                          dispatchQueue:dispatch_get_main_queue()];
+            [self startTimer];
         });
     }];
+}
+
+- (void)startTimer
+{
+    self.timer = [MSWeakTimer
+                  scheduledTimerWithTimeInterval:1.0f
+                  target:self
+                  selector:@selector(tick:)
+                  userInfo:nil
+                  repeats:YES
+                  dispatchQueue:dispatch_get_main_queue()];
 }
 
 - (void)tick:(id)sender
@@ -162,6 +172,8 @@
     @weakify(self);
     
     [self.timer invalidate];
+    NSDate *endDate = [NSDate date];
+    self.safy.currentStartDate = endDate;
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
         @strongify(self);
@@ -169,13 +181,11 @@
         SAFSafy *safy = (SAFSafy *)[localContext objectWithID:[self.safy objectID]];
         SAFTime *time = [SAFTime MR_createInContext:localContext];
         time.startDate = self.safy.currentStartDate;
-        time.endDate = [NSDate date];
+        time.endDate = endDate;
         safy.currentStartDate = time.endDate;
         [time setSafy:safy];
-        [safy addTimesObject:time];
-    } completion:^(BOOL success, NSError *error) {
-        [self findSelectedSafyAndStartTime];
     }];
+    [self startTimer];
 }
 
 - (void)pick:(id)sender
