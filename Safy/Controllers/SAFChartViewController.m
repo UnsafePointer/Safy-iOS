@@ -54,7 +54,9 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
 
 - (void)drawGraph
 {
-    [self.lineChart setXLabels:[self generateXLabels]];
+    CGRect frame = self.lineChart.frame;
+    PNLineChart *lineChart= [[PNLineChart alloc] initWithFrame:frame];
+    [lineChart setXLabels:[self generateXLabels]];
     PNLineChartData *lineChartData = [[PNLineChartData alloc] init];
     lineChartData.color = [UIColor colorWithHexString:@"#FF9500"];
     NSArray *dataSource = [self generateDataSource];
@@ -63,8 +65,12 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
         CGFloat yValue = [dataSource[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
-    self.lineChart.chartData = @[lineChartData];
-    [self.lineChart strokeChart];
+    lineChart.chartData = @[lineChartData];
+    [lineChart strokeChart];
+    
+    [self.lineChart removeFromSuperview];
+    [self.view addSubview:lineChart];
+    self.lineChart = lineChart;
 }
 
 - (NSCalendarUnit)calendarUnitForSelection
