@@ -21,4 +21,5 @@
     #import <FXForms/FXForms.h>
     #import <libextobjc/EXTScope.h>
     #import <ActiveSupportInflector/NSString+ActiveSupportInflector.h>
+    #import <PNChart/PNChart.h>
 #endif

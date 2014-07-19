@@ -10,4 +10,5 @@ target "Safy" do
   pod 'TSMessages', '~> 0.9.9'
   pod 'libextobjc', '~> 0.4.0'
   pod 'ActiveSupportInflector', '~> 0.0.1'
+  pod 'PNChart', '~> 0.5.0'
 end

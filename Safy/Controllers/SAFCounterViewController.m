@@ -16,15 +16,14 @@
 
 @property (nonatomic, strong) MSWeakTimer *timer;
 @property (nonatomic, strong) SAFSafy *safy;
-@property (nonatomic, weak) TOMSMorphingLabel *tickLabel;
-@property (nonatomic, weak) TOMSMorphingLabel *safyLabel;
+@property (nonatomic, weak) IBOutlet TOMSMorphingLabel *tickLabel;
+@property (nonatomic, weak) IBOutlet TOMSMorphingLabel *safyLabel;
 @property (nonatomic, strong) UIPopoverController *settingsController;
 
 - (void)findSelectedSafyAndStartTimer;
-- (void)setupLabels;
 - (void)setupNavigationItemButtons;
 - (void)tick:(id)sender;
-- (void)oops:(id)sender;
+- (IBAction)oops:(id)sender;
 - (void)charts:(id)sender;
 - (void)pick:(id)sender;
 
@@ -46,7 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupLabels];
     [self findSelectedSafyAndStartTimer];
     [self setupNavigationItemButtons];
 }
@@ -71,46 +69,6 @@
                                   target:self
                                   action:@selector(charts:)];
     self.navigationItem.rightBarButtonItems = @[btnCharts, btnPick];
-}
-
-- (void)setupLabels
-{
-    TOMSMorphingLabel *tickLabel = [[TOMSMorphingLabel alloc] initWithFrame:CGRectMake(0,
-                                                                                       (self.view.frame.size.height - 44 - 20) / 3,
-                                                                                       self.view.frame.size.width,
-                                                                                       (self.view.frame.size.height - 44 - 20) / 3)];
-    tickLabel.backgroundColor = [UIColor clearColor];
-    tickLabel.textAlignment = NSTextAlignmentCenter;
-    tickLabel.font = [UIFont systemFontOfSize:120.0f];
-    tickLabel.textColor = [UIColor colorWithHexString:@"#FF9500"];
-    [tickLabel setText:@"0:00:00"];
-    [self.view addSubview:tickLabel];
-    self.tickLabel = tickLabel;
-    TOMSMorphingLabel *safyLabel = [[TOMSMorphingLabel alloc] initWithFrame:CGRectMake(132,
-                                                                                       0,
-                                                                                       self.view.frame.size.width - (132 * 2),
-                                                                                       (self.view.frame.size.height - 44 - 20) / 3)];
-    safyLabel.backgroundColor = [UIColor clearColor];
-    safyLabel.textAlignment = NSTextAlignmentCenter;
-    safyLabel.font = [UIFont systemFontOfSize:60.0f];
-    safyLabel.textColor = [UIColor colorWithHexString:@"#FF5E3A"];
-    safyLabel.numberOfLines = 0;
-    [safyLabel setText:@"... without any ..."];
-    [self.view addSubview:safyLabel];
-    self.safyLabel = safyLabel;
-    UIButton *oopsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    oopsButton.frame = CGRectMake(0,
-                                  ((self.view.frame.size.height - 44 - 20) / 3) * 2,
-                                  self.view.frame.size.width,
-                                  (self.view.frame.size.height - 44 - 20) / 3);
-    [oopsButton.titleLabel setFont:[UIFont systemFontOfSize:80.0f]];
-    [oopsButton setTitle:@"oops!"
-                forState:UIControlStateNormal];
-    [oopsButton setTintColor:[UIColor colorWithHexString:@"#FF5E3A"]];
-    [self.view addSubview:oopsButton];
-    [oopsButton addTarget:self
-                   action:@selector(oops:)
-         forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)findSelectedSafyAndStartTimer
@@ -157,7 +115,7 @@
                        (long)[aDateComponents minute],
                        (long)[aDateComponents second]];
     [self.tickLabel setText:print];
-    [self.safyLabel setText:[NSString stringWithFormat:@"%@ without any %@",
+    [self.safyLabel setText:[NSString stringWithFormat:@"%@ without any\n%@",
                              [self.safy.currentStartDate.timeAgoSinceNow stringByReplacingOccurrencesOfString:@" ago"
                                                                                                    withString:@""],
                              [self.safy.text lowercaseString]]];
@@ -172,11 +130,12 @@
                                          animated:YES];
 }
 
-- (void)oops:(id)sender
+- (IBAction)oops:(id)sender
 {
     @weakify(self);
     
     [self.timer invalidate];
+    NSDate *currentStartDate = self.safy.currentStartDate;
     NSDate *endDate = [NSDate date];
     self.safy.currentStartDate = endDate;
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
@@ -185,7 +144,7 @@
         
         SAFSafy *safy = (SAFSafy *)[localContext objectWithID:[self.safy objectID]];
         SAFTime *time = [SAFTime MR_createInContext:localContext];
-        time.startDate = self.safy.currentStartDate;
+        time.startDate = currentStartDate;
         time.endDate = endDate;
         safy.currentStartDate = time.endDate;
         [[safy timesSet] addObject:time];

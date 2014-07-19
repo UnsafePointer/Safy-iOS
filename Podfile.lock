@@ -42,9 +42,12 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - MSWeakTimer (1.1.0)
+  - PNChart (0.5):
+    - UICountingLabel (~> 1.0.0)
   - TOMSMorphingLabel (0.1.0)
   - TSMessages (0.9.9):
     - HexColors
+  - UICountingLabel (1.0.0)
 
 DEPENDENCIES:
   - ActiveSupportInflector (~> 0.0.1)
@@ -54,6 +57,7 @@ DEPENDENCIES:
   - libextobjc (~> 0.4.0)
   - MagicalRecord (~> 2.2.0)
   - MSWeakTimer (~> 1.1.0)
+  - PNChart (~> 0.5.0)
   - TOMSMorphingLabel (~> 0.1.0)
   - TSMessages (~> 0.9.9)
 
@@ -65,7 +69,9 @@ SPEC CHECKSUMS:
   libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MSWeakTimer: 6bd071c058fd49daa62013e4ae70caf61d0f2dc2
+  PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
   TOMSMorphingLabel: 6b573950bbf8a898cdf85f76fe2e2379b11e3c35
   TSMessages: 2999ef55e532378692e9d14d32da2bb60e285129
+  UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
 
 COCOAPODS: 0.33.1
