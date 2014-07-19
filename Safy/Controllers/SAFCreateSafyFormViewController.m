@@ -19,6 +19,8 @@
 
 @implementation SAFCreateSafyFormViewController
 
+#pragma mark - View controller life cycle
+
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
 {

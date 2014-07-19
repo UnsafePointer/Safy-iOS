@@ -21,7 +21,7 @@
 
 static NSString *cellIdentifier = @"SAFDeveloperTableViewCell";
 
-#pragma mark - Controller Life Cycle
+#pragma mark - View controller life cycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

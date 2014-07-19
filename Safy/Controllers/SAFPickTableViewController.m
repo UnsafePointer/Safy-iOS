@@ -23,6 +23,8 @@
 
 static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
+#pragma mark - View controller life cycle
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

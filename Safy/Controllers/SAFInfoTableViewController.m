@@ -23,7 +23,7 @@
 
 static NSString *cellIdentifier = @"SAFInfoTableViewCell";
 
-#pragma mark - Controller Life Cycle
+#pragma mark - View controller life cycle
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

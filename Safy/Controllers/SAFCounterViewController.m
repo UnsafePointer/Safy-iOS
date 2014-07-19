@@ -34,6 +34,8 @@
 
 @implementation SAFCounterViewController
 
+static int const kMinDataNeededForGraph = 2;
+
 #pragma mark - View controller life cycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -132,7 +134,7 @@
 
 - (void)charts:(id)sender
 {
-    if (self.safy.times.count <= 0) {
+    if (self.safy.times.count < kMinDataNeededForGraph) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Not enough data to build a graph."
                                                            delegate:nil

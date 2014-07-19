@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
     SAFChartTypeYears
 };
 
+#pragma mark - View controller life cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
