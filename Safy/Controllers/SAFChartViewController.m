@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
     PNLineChart *lineChart= [[PNLineChart alloc] initWithFrame:frame];
     [lineChart setXLabels:[self generateXLabels]];
     PNLineChartData *lineChartData = [[PNLineChartData alloc] init];
-    lineChartData.color = [UIColor colorWithHexString:@"#FF9500"];
+    lineChartData.color = [UIColor colorWithHexString:@"#FF5E3A"];
     NSArray *dataSource = [self generateDataSource];
     lineChartData.itemCount = dataSource.count;
     lineChartData.getData = ^(NSUInteger index) {

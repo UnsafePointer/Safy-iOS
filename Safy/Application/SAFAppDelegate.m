@@ -14,7 +14,7 @@
 @interface SAFAppDelegate ()
 
 - (void)seedDataIfNeeded;
-- (void)seedTestData;
+- (void)seedTestDataIfNeeded;
 
 @end
 
@@ -29,7 +29,7 @@
     self.window.tintColor = [UIColor colorWithHexString:@"#FF9500"];
     [self.window makeKeyAndVisible];
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    [self seedDataIfNeeded];
+    [self seedTestDataIfNeeded];
     SAFCounterViewController *viewController = [[SAFCounterViewController alloc]
                                                 initWithNibName:nil
                                                 bundle:nil];
@@ -59,7 +59,7 @@
     }
 }
 
-- (void)seedTestData
+- (void)seedTestDataIfNeeded
 {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         SAFSafy *safy = [SAFSafy MR_createInContext:localContext];
