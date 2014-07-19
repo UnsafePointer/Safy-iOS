@@ -11,6 +11,7 @@
 #import "SAFTime.h"
 #import "SAFPickTableViewController.h"
 #import "SAFChartViewController.h"
+#import "SAFInfoTableViewController.h"
 
 @interface SAFCounterViewController () <SAFPickTableViewControllerDelegate>
 
@@ -18,7 +19,8 @@
 @property (nonatomic, strong) SAFSafy *safy;
 @property (nonatomic, weak) IBOutlet TOMSMorphingLabel *tickLabel;
 @property (nonatomic, weak) IBOutlet TOMSMorphingLabel *safyLabel;
-@property (nonatomic, strong) UIPopoverController *settingsController;
+@property (nonatomic, strong) UIPopoverController *pickPopoverController;
+@property (nonatomic, strong) UIPopoverController *infoPopoverController;
 
 - (void)findSelectedSafyAndStartTimer;
 - (void)setupNavigationItemButtons;
@@ -26,6 +28,7 @@
 - (IBAction)oops:(id)sender;
 - (void)charts:(id)sender;
 - (void)pick:(id)sender;
+- (void)info:(id)sender;
 
 @end
 
@@ -58,6 +61,11 @@
 
 - (void)setupNavigationItemButtons
 {
+    UIBarButtonItem *btnInfo = [[UIBarButtonItem alloc]
+                                initWithImage:[UIImage imageNamed:@"Info"]
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(info:)];
     UIBarButtonItem *btnPick = [[UIBarButtonItem alloc]
                                 initWithImage:[UIImage imageNamed:@"Pick"]
                                 style:UIBarButtonItemStyleBordered
@@ -69,6 +77,7 @@
                                   target:self
                                   action:@selector(charts:)];
     self.navigationItem.rightBarButtonItems = @[btnCharts, btnPick];
+    self.navigationItem.leftBarButtonItem = btnInfo;
 }
 
 - (void)findSelectedSafyAndStartTimer
@@ -162,7 +171,18 @@
     [popoverController presentPopoverFromBarButtonItem:sender
                               permittedArrowDirections:UIPopoverArrowDirectionUp
                                               animated:YES];
-    self.settingsController = popoverController;
+    self.pickPopoverController = popoverController;
+}
+
+- (void)info:(id)sender
+{
+    SAFInfoTableViewController *viewController = [[SAFInfoTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    [popoverController presentPopoverFromBarButtonItem:sender
+                              permittedArrowDirections:UIPopoverArrowDirectionUp
+                                              animated:YES];
+    self.infoPopoverController = popoverController;
 }
 
 #pragma mark - SAFPickTableViewControllerDelegate

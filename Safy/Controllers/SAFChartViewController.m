@@ -120,7 +120,7 @@ typedef NS_ENUM(NSInteger, SAFChartType) {
                                                                            fromDate:time.startDate
                                                                              toDate:time.endDate
                                                                             options:0];
-        [dataSource addObject:[NSNumber numberWithInt:[self valueForSelection:dateComponents]]];
+        [dataSource addObject:[NSNumber numberWithInt:(int)[self valueForSelection:dateComponents]]];
     }
     return [dataSource copy];
 }

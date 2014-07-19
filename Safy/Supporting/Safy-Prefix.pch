@@ -22,4 +22,9 @@
     #import <libextobjc/EXTScope.h>
     #import <ActiveSupportInflector/NSString+ActiveSupportInflector.h>
     #import <PNChart/PNChart.h>
+    #import <Social/Social.h>
+    #import <Accounts/Accounts.h>
+    #import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
+    #import <MessageUI/MessageUI.h>
+    #import <SVProgressHUD/SVProgressHUD.h>
 #endif

@@ -51,7 +51,7 @@
     if (![SAFSafy MR_findFirst]) {
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             SAFSafy *safy = [SAFSafy MR_createInContext:localContext];
-            safy.text = @"Push Notification Issues";
+            safy.text = @"Accidents";
             safy.selected = [NSNumber numberWithBool:YES];
             safy.currentStartDate = [NSDate date];
         }];

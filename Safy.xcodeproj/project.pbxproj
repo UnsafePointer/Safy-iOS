@@ -19,6 +19,15 @@
 		A08A1C7C197AC49600B372EF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C74197AC49600B372EF /* Model.xcdatamodeld */; };
 		A08A1C7D197AC49600B372EF /* SAFSafy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C77197AC49600B372EF /* SAFSafy.m */; };
 		A08A1C7E197AC49600B372EF /* SAFTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C79197AC49600B372EF /* SAFTime.m */; };
+		A08A1C89197AE81200B372EF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A1C88197AE81200B372EF /* Social.framework */; };
+		A08A1C8D197AE88C00B372EF /* iLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C8C197AE88C00B372EF /* iLink.m */; };
+		A08A1C8F197AE93500B372EF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A1C8E197AE93500B372EF /* Accounts.framework */; };
+		A08A1C91197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */; };
+		A08A1C97197AEB0700B372EF /* SAFInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C96197AEB0700B372EF /* SAFInfoTableViewController.m */; };
+		A08A1C99197AEB1800B372EF /* SAFInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C98197AEB1800B372EF /* SAFInfoTableViewCell.xib */; };
+		A08A1C9C197AEB6600B372EF /* SAFDeveloperTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C9B197AEB6600B372EF /* SAFDeveloperTableViewController.m */; };
+		A08A1C9E197AEB8C00B372EF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A1C9D197AEB8C00B372EF /* MessageUI.framework */; };
+		A08A1CA0197AED7B00B372EF /* SAFDeveloperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C9F197AED7B00B372EF /* SAFDeveloperTableViewCell.xib */; };
 		A0967E131951DAB80083CAE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E121951DAB80083CAE1 /* Foundation.framework */; };
 		A0967E151951DAB80083CAE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E141951DAB80083CAE1 /* CoreGraphics.framework */; };
 		A0967E171951DAB80083CAE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E161951DAB80083CAE1 /* UIKit.framework */; };
@@ -50,6 +59,18 @@
 		A08A1C77197AC49600B372EF /* SAFSafy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFSafy.m; path = Models/SAFSafy.m; sourceTree = "<group>"; };
 		A08A1C78197AC49600B372EF /* SAFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFTime.h; path = Models/SAFTime.h; sourceTree = "<group>"; };
 		A08A1C79197AC49600B372EF /* SAFTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFTime.m; path = Models/SAFTime.m; sourceTree = "<group>"; };
+		A08A1C88197AE81200B372EF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		A08A1C8B197AE88C00B372EF /* iLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iLink.h; path = External/iLink/iLink/iLink.h; sourceTree = SOURCE_ROOT; };
+		A08A1C8C197AE88C00B372EF /* iLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iLink.m; path = External/iLink/iLink/iLink.m; sourceTree = SOURCE_ROOT; };
+		A08A1C8E197AE93500B372EF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Safy-acknowledgements.plist"; path = "Pods/Pods-Safy-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		A08A1C95197AEB0700B372EF /* SAFInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFInfoTableViewController.h; path = Controllers/SAFInfoTableViewController.h; sourceTree = "<group>"; };
+		A08A1C96197AEB0700B372EF /* SAFInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFInfoTableViewController.m; path = Controllers/SAFInfoTableViewController.m; sourceTree = "<group>"; };
+		A08A1C98197AEB1800B372EF /* SAFInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SAFInfoTableViewCell.xib; path = Views/SAFInfoTableViewCell.xib; sourceTree = "<group>"; };
+		A08A1C9A197AEB6600B372EF /* SAFDeveloperTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFDeveloperTableViewController.h; path = Controllers/SAFDeveloperTableViewController.h; sourceTree = "<group>"; };
+		A08A1C9B197AEB6600B372EF /* SAFDeveloperTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFDeveloperTableViewController.m; path = Controllers/SAFDeveloperTableViewController.m; sourceTree = "<group>"; };
+		A08A1C9D197AEB8C00B372EF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A08A1C9F197AED7B00B372EF /* SAFDeveloperTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAFDeveloperTableViewCell.xib; sourceTree = "<group>"; };
 		A0967E0F1951DAB80083CAE1 /* Safy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0967E121951DAB80083CAE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0967E141951DAB80083CAE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08A1C9E197AEB8C00B372EF /* MessageUI.framework in Frameworks */,
+				A08A1C8F197AE93500B372EF /* Accounts.framework in Frameworks */,
+				A08A1C89197AE81200B372EF /* Social.framework in Frameworks */,
 				A0967E151951DAB80083CAE1 /* CoreGraphics.framework in Frameworks */,
 				A0967E171951DAB80083CAE1 /* UIKit.framework in Frameworks */,
 				A0967E131951DAB80083CAE1 /* Foundation.framework in Frameworks */,
@@ -87,8 +111,19 @@
 			children = (
 				A08A1C62197ABFD100B372EF /* SAFCounterViewController.xib */,
 				A08A1C64197AC04000B372EF /* SAFChartViewController.xib */,
+				A08A1C98197AEB1800B372EF /* SAFInfoTableViewCell.xib */,
+				A08A1C9F197AED7B00B372EF /* SAFDeveloperTableViewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		A08A1C8A197AE87C00B372EF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				A08A1C8B197AE88C00B372EF /* iLink.h */,
+				A08A1C8C197AE88C00B372EF /* iLink.m */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 		A0967E061951DAB80083CAE1 = {
@@ -112,6 +147,9 @@
 		A0967E111951DAB80083CAE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A08A1C9D197AEB8C00B372EF /* MessageUI.framework */,
+				A08A1C8E197AE93500B372EF /* Accounts.framework */,
+				A08A1C88197AE81200B372EF /* Social.framework */,
 				A0967E121951DAB80083CAE1 /* Foundation.framework */,
 				A0967E141951DAB80083CAE1 /* CoreGraphics.framework */,
 				A0967E161951DAB80083CAE1 /* UIKit.framework */,
@@ -126,6 +164,7 @@
 			children = (
 				A0967E411951DABF0083CAE1 /* Application */,
 				A0967E521951DE7C0083CAE1 /* Controllers */,
+				A08A1C8A197AE87C00B372EF /* External */,
 				A0967E241951DAB80083CAE1 /* Images.xcassets */,
 				A0967E621951DF950083CAE1 /* Models */,
 				A0967E191951DAB80083CAE1 /* Supporting */,
@@ -137,6 +176,7 @@
 		A0967E191951DAB80083CAE1 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */,
 				A0967E4E1951DB6C0083CAE1 /* InfoPlist.strings */,
 				A0967E461951DB060083CAE1 /* main.m */,
 				A0967E471951DB060083CAE1 /* Safy-Info.plist */,
@@ -165,6 +205,10 @@
 				A01F4D62197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m */,
 				A08A1C5E197AB62500B372EF /* SAFChartViewController.h */,
 				A08A1C5F197AB62500B372EF /* SAFChartViewController.m */,
+				A08A1C95197AEB0700B372EF /* SAFInfoTableViewController.h */,
+				A08A1C96197AEB0700B372EF /* SAFInfoTableViewController.m */,
+				A08A1C9A197AEB6600B372EF /* SAFDeveloperTableViewController.h */,
+				A08A1C9B197AEB6600B372EF /* SAFDeveloperTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,9 +285,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08A1C99197AEB1800B372EF /* SAFInfoTableViewCell.xib in Resources */,
 				A0967E251951DAB80083CAE1 /* Images.xcassets in Resources */,
 				A08A1C63197ABFD100B372EF /* SAFCounterViewController.xib in Resources */,
+				A08A1CA0197AED7B00B372EF /* SAFDeveloperTableViewCell.xib in Resources */,
 				A08A1C65197AC04000B372EF /* SAFChartViewController.xib in Resources */,
+				A08A1C91197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist in Resources */,
 				A0967E4C1951DB6C0083CAE1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01F4D60197A8C6200B1FC38 /* SAFCreateSafyForm.m in Sources */,
+				A08A1C97197AEB0700B372EF /* SAFInfoTableViewController.m in Sources */,
 				A08A1C7E197AC49600B372EF /* SAFTime.m in Sources */,
 				A08A1C7A197AC49600B372EF /* _SAFSafy.m in Sources */,
 				A0967E4A1951DB060083CAE1 /* main.m in Sources */,
@@ -296,7 +344,9 @@
 				A08A1C60197AB62500B372EF /* SAFChartViewController.m in Sources */,
 				A0967E441951DB000083CAE1 /* SAFAppDelegate.m in Sources */,
 				A01F4D63197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m in Sources */,
+				A08A1C9C197AEB6600B372EF /* SAFDeveloperTableViewController.m in Sources */,
 				A08A1C7B197AC49600B372EF /* _SAFTime.m in Sources */,
+				A08A1C8D197AE88C00B372EF /* iLink.m in Sources */,
 				A08A1C7C197AC49600B372EF /* Model.xcdatamodeld in Sources */,
 				A01F4D5D197A822C00B1FC38 /* SAFPickTableViewController.m in Sources */,
 				A0967E5E1951DF150083CAE1 /* SAFCounterViewController.m in Sources */,
