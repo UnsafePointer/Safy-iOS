@@ -8,6 +8,7 @@
 
 #import "SAFCreateSafyFormViewController.h"
 #import "SAFCreateSafyForm.h"
+#import "SAFSafy.h"
 
 @interface SAFCreateSafyFormViewController ()
 
@@ -42,8 +43,21 @@
 {
     SAFCreateSafyForm *form = self.formController.form;
     if ([form.name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
-        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Name can't be empty."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        return;
     }
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        SAFSafy *safy = [SAFSafy MR_createInContext:localContext];
+        safy.text = form.name;
+        safy.selected = [NSNumber numberWithBool:NO];
+        safy.currentStartDate = [NSDate date];
+    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
