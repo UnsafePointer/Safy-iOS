@@ -134,9 +134,9 @@
                                                     fromDate:self.safy.currentStartDate
                                                       toDate:[NSDate date]
                                                      options:0];
-    NSString *print = [NSString stringWithFormat:@"%d:%02d:%02d", [aDateComponents hour],
-                       [aDateComponents minute],
-                       [aDateComponents second]];
+    NSString *print = [NSString stringWithFormat:@"%ld:%02ld:%02ld", (long)[aDateComponents hour],
+                       (long)[aDateComponents minute],
+                       (long)[aDateComponents second]];
     [self.tickLabel setText:print];
     [self.safyLabel setText:[NSString stringWithFormat:@"%@ without a %@",
                              [self.safy.currentStartDate.timeAgoSinceNow stringByReplacingOccurrencesOfString:@" ago"
@@ -148,10 +148,7 @@
 {
     [self.timer invalidate];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", @[[self.safy objectID]]];
-        NSArray *results = [SAFSafy MR_findAllWithPredicate:mainPredicate
-                                                  inContext:localContext];
-        SAFSafy *safy = [results firstObject];
+        SAFSafy *safy = (SAFSafy *)[localContext objectWithID:[self.safy objectID]];
         SAFTime *time = [SAFTime MR_createInContext:localContext];
         time.startDate = self.safy.currentStartDate;
         time.endDate = [NSDate date];
