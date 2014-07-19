@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="SAFSafy" representedClassName="SAFSafy" syncable="YES">
         <attribute name="currentStartDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="times" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SAFTime" inverseName="safy" inverseEntity="SAFTime" syncable="YES"/>
+        <relationship name="times" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="SAFTime" inverseName="safy" inverseEntity="SAFTime" syncable="YES"/>
     </entity>
     <entity name="SAFTime" representedClassName="SAFTime" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -12,7 +12,7 @@
         <relationship name="safy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SAFSafy" inverseName="times" inverseEntity="SAFSafy" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SAFSafy" positionX="196" positionY="-63" width="128" height="103"/>
+        <element name="SAFSafy" positionX="196" positionY="-63" width="128" height="105"/>
         <element name="SAFTime" positionX="-54" positionY="0" width="128" height="88"/>
     </elements>
 </model>

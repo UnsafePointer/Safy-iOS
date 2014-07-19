@@ -188,7 +188,7 @@
         time.startDate = self.safy.currentStartDate;
         time.endDate = endDate;
         safy.currentStartDate = time.endDate;
-        [time setSafy:safy];
+        [[safy timesSet] addObject:time];
     }];
     [self startTimer];
 }

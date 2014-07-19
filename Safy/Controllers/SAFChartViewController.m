@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
     self.title = self.safy.text;
+    NSLog(@"%d", [self.safy.times count]);
 }
 
 - (void)didReceiveMemoryWarning

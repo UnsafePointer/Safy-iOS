@@ -14,6 +14,11 @@
 		A08A1C60197AB62500B372EF /* SAFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C5F197AB62500B372EF /* SAFChartViewController.m */; };
 		A08A1C63197ABFD100B372EF /* SAFCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C62197ABFD100B372EF /* SAFCounterViewController.xib */; };
 		A08A1C65197AC04000B372EF /* SAFChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C64197AC04000B372EF /* SAFChartViewController.xib */; };
+		A08A1C7A197AC49600B372EF /* _SAFSafy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C71197AC49600B372EF /* _SAFSafy.m */; };
+		A08A1C7B197AC49600B372EF /* _SAFTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C73197AC49600B372EF /* _SAFTime.m */; };
+		A08A1C7C197AC49600B372EF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C74197AC49600B372EF /* Model.xcdatamodeld */; };
+		A08A1C7D197AC49600B372EF /* SAFSafy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C77197AC49600B372EF /* SAFSafy.m */; };
+		A08A1C7E197AC49600B372EF /* SAFTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C79197AC49600B372EF /* SAFTime.m */; };
 		A0967E131951DAB80083CAE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E121951DAB80083CAE1 /* Foundation.framework */; };
 		A0967E151951DAB80083CAE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E141951DAB80083CAE1 /* CoreGraphics.framework */; };
 		A0967E171951DAB80083CAE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0967E161951DAB80083CAE1 /* UIKit.framework */; };
@@ -21,10 +26,7 @@
 		A0967E441951DB000083CAE1 /* SAFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0967E431951DB000083CAE1 /* SAFAppDelegate.m */; };
 		A0967E4A1951DB060083CAE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0967E461951DB060083CAE1 /* main.m */; };
 		A0967E4C1951DB6C0083CAE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0967E4E1951DB6C0083CAE1 /* InfoPlist.strings */; };
-		A0967E511951DD780083CAE1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0967E4F1951DD780083CAE1 /* Model.xcdatamodeld */; };
 		A0967E5E1951DF150083CAE1 /* SAFCounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0967E5C1951DF150083CAE1 /* SAFCounterViewController.m */; };
-		A0967E681951DFC20083CAE1 /* SAFTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A0967E671951DFC20083CAE1 /* SAFTime.m */; };
-		A0967E741951E8660083CAE1 /* SAFSafy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0967E731951E8660083CAE1 /* SAFSafy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,15 @@
 		A08A1C5F197AB62500B372EF /* SAFChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFChartViewController.m; path = Controllers/SAFChartViewController.m; sourceTree = "<group>"; };
 		A08A1C62197ABFD100B372EF /* SAFCounterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SAFCounterViewController.xib; path = Views/SAFCounterViewController.xib; sourceTree = "<group>"; };
 		A08A1C64197AC04000B372EF /* SAFChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SAFChartViewController.xib; path = Views/SAFChartViewController.xib; sourceTree = "<group>"; };
+		A08A1C70197AC49600B372EF /* _SAFSafy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _SAFSafy.h; path = Models/_SAFSafy.h; sourceTree = "<group>"; };
+		A08A1C71197AC49600B372EF /* _SAFSafy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _SAFSafy.m; path = Models/_SAFSafy.m; sourceTree = "<group>"; };
+		A08A1C72197AC49600B372EF /* _SAFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _SAFTime.h; path = Models/_SAFTime.h; sourceTree = "<group>"; };
+		A08A1C73197AC49600B372EF /* _SAFTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _SAFTime.m; path = Models/_SAFTime.m; sourceTree = "<group>"; };
+		A08A1C75197AC49600B372EF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A08A1C76197AC49600B372EF /* SAFSafy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFSafy.h; path = Models/SAFSafy.h; sourceTree = "<group>"; };
+		A08A1C77197AC49600B372EF /* SAFSafy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFSafy.m; path = Models/SAFSafy.m; sourceTree = "<group>"; };
+		A08A1C78197AC49600B372EF /* SAFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFTime.h; path = Models/SAFTime.h; sourceTree = "<group>"; };
+		A08A1C79197AC49600B372EF /* SAFTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFTime.m; path = Models/SAFTime.m; sourceTree = "<group>"; };
 		A0967E0F1951DAB80083CAE1 /* Safy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0967E121951DAB80083CAE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0967E141951DAB80083CAE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,13 +62,8 @@
 		A0967E471951DB060083CAE1 /* Safy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Safy-Info.plist"; path = "Supporting/Safy-Info.plist"; sourceTree = "<group>"; };
 		A0967E481951DB060083CAE1 /* Safy-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Safy-Prefix.pch"; path = "Supporting/Safy-Prefix.pch"; sourceTree = "<group>"; };
 		A0967E4D1951DB6C0083CAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A0967E501951DD780083CAE1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A0967E5B1951DF150083CAE1 /* SAFCounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFCounterViewController.h; path = Controllers/SAFCounterViewController.h; sourceTree = "<group>"; };
 		A0967E5C1951DF150083CAE1 /* SAFCounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFCounterViewController.m; path = Controllers/SAFCounterViewController.m; sourceTree = "<group>"; };
-		A0967E661951DFC20083CAE1 /* SAFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFTime.h; path = Models/SAFTime.h; sourceTree = "<group>"; };
-		A0967E671951DFC20083CAE1 /* SAFTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFTime.m; path = Models/SAFTime.m; sourceTree = "<group>"; };
-		A0967E721951E8660083CAE1 /* SAFSafy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFSafy.h; path = Models/SAFSafy.h; sourceTree = "<group>"; };
-		A0967E731951E8660083CAE1 /* SAFSafy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFSafy.m; path = Models/SAFSafy.m; sourceTree = "<group>"; };
 		A201F531754049199F761464 /* Pods-Safy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safy.xcconfig"; path = "Pods/Pods-Safy.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +141,6 @@
 				A0967E461951DB060083CAE1 /* main.m */,
 				A0967E471951DB060083CAE1 /* Safy-Info.plist */,
 				A0967E481951DB060083CAE1 /* Safy-Prefix.pch */,
-				A0967E4F1951DD780083CAE1 /* Model.xcdatamodeld */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -167,10 +172,15 @@
 		A0967E621951DF950083CAE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A0967E661951DFC20083CAE1 /* SAFTime.h */,
-				A0967E671951DFC20083CAE1 /* SAFTime.m */,
-				A0967E721951E8660083CAE1 /* SAFSafy.h */,
-				A0967E731951E8660083CAE1 /* SAFSafy.m */,
+				A08A1C74197AC49600B372EF /* Model.xcdatamodeld */,
+				A08A1C70197AC49600B372EF /* _SAFSafy.h */,
+				A08A1C71197AC49600B372EF /* _SAFSafy.m */,
+				A08A1C72197AC49600B372EF /* _SAFTime.h */,
+				A08A1C73197AC49600B372EF /* _SAFTime.m */,
+				A08A1C76197AC49600B372EF /* SAFSafy.h */,
+				A08A1C77197AC49600B372EF /* SAFSafy.m */,
+				A08A1C78197AC49600B372EF /* SAFTime.h */,
+				A08A1C79197AC49600B372EF /* SAFTime.m */,
 				A01F4D5E197A8C6200B1FC38 /* SAFCreateSafyForm.h */,
 				A01F4D5F197A8C6200B1FC38 /* SAFCreateSafyForm.m */,
 			);
@@ -278,16 +288,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0967E681951DFC20083CAE1 /* SAFTime.m in Sources */,
 				A01F4D60197A8C6200B1FC38 /* SAFCreateSafyForm.m in Sources */,
-				A0967E741951E8660083CAE1 /* SAFSafy.m in Sources */,
+				A08A1C7E197AC49600B372EF /* SAFTime.m in Sources */,
+				A08A1C7A197AC49600B372EF /* _SAFSafy.m in Sources */,
 				A0967E4A1951DB060083CAE1 /* main.m in Sources */,
+				A08A1C7D197AC49600B372EF /* SAFSafy.m in Sources */,
 				A08A1C60197AB62500B372EF /* SAFChartViewController.m in Sources */,
 				A0967E441951DB000083CAE1 /* SAFAppDelegate.m in Sources */,
 				A01F4D63197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m in Sources */,
+				A08A1C7B197AC49600B372EF /* _SAFTime.m in Sources */,
+				A08A1C7C197AC49600B372EF /* Model.xcdatamodeld in Sources */,
 				A01F4D5D197A822C00B1FC38 /* SAFPickTableViewController.m in Sources */,
 				A0967E5E1951DF150083CAE1 /* SAFCounterViewController.m in Sources */,
-				A0967E511951DD780083CAE1 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +444,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A0967E4F1951DD780083CAE1 /* Model.xcdatamodeld */ = {
+		A08A1C74197AC49600B372EF /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A0967E501951DD780083CAE1 /* Model.xcdatamodel */,
+				A08A1C75197AC49600B372EF /* Model.xcdatamodel */,
 			);
-			currentVersion = A0967E501951DD780083CAE1 /* Model.xcdatamodel */;
+			currentVersion = A08A1C75197AC49600B372EF /* Model.xcdatamodel */;
 			name = Model.xcdatamodeld;
-			path = Supporting/Model.xcdatamodeld;
+			path = Models/Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,18 +1,15 @@
-//
-//  SAFTime.m
-//  Safy
-//
-//  Created by Renzo Crisostomo on 18/06/14.
-//  Copyright (c) 2014 Renzo Crisóstomo. All rights reserved.
-//
-
 #import "SAFTime.h"
-#import "SAFSafy.h"
+
+
+@interface SAFTime ()
+
+// Private interface goes here.
+
+@end
+
 
 @implementation SAFTime
 
-@dynamic startDate;
-@dynamic endDate;
-@dynamic safy;
+// Custom logic goes here.
 
 @end
