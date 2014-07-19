@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class SAFSafy;
+
+@protocol SAFPickTableViewControllerDelegate <NSObject>
+@required
+- (void)safyPicked:(SAFSafy *)safy;
+@end
+
 @interface SAFPickTableViewController : UITableViewController
+
+@property (nonatomic, strong) SAFSafy *selectedSafy;
+@property (nonatomic, weak) id<SAFPickTableViewControllerDelegate> delegate;
 
 @end

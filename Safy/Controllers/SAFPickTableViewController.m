@@ -10,7 +10,7 @@
 #import "SAFSafy.h"
 #import "SAFCreateSafyFormViewController.h"
 
-@interface SAFPickTableViewController ()
+@interface SAFPickTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -50,14 +50,11 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 - (void)setupFetchedResultsController
 {
-    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([SAFSafy class])];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text"
-                                                              ascending:YES]
-                                ];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:[NSManagedObjectContext MR_defaultContext]
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
+    self.fetchedResultsController = [SAFSafy MR_fetchAllSortedBy:@"text"
+                                                       ascending:YES
+                                                   withPredicate:nil
+                                                         groupBy:nil
+                                                        delegate:self];
     [self.fetchedResultsController performFetch:NULL];
 }
 
@@ -107,8 +104,8 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    id<NSFetchedResultsSectionInfo> section = self.fetchedResultsController.sections[indexPath.section];
-    if (section.numberOfObjects <= 1) {
+    SAFSafy *safy = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([safy.selected boolValue] == YES) {
         return NO;
     }
     return YES;
@@ -117,7 +114,30 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         SAFSafy *safy = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [safy MR_deleteEntity];
+        NSManagedObjectID *objectID = safy.objectID;
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            SAFSafy *safy = (SAFSafy *)[localContext objectWithID:objectID];
+            [safy MR_deleteEntity];
+        }];
+    }
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+    SAFSafy *safy = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSManagedObjectID *newSelectedSafyObjectID = safy.objectID;
+    NSManagedObjectID *oldSelectedSafyObjectID = self.selectedSafy.objectID;
+    if ([safy.selected boolValue] != YES) {
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            SAFSafy *newSelectedSafy = (SAFSafy *)[localContext objectWithID:newSelectedSafyObjectID];
+            newSelectedSafy.selected = [NSNumber numberWithBool:YES];
+            SAFSafy *oldSelectedSafy = (SAFSafy *)[localContext objectWithID:oldSelectedSafyObjectID];
+            oldSelectedSafy.selected = [NSNumber numberWithBool:NO];
+        }];
     }
 }
 
@@ -148,8 +168,14 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
     } else if (type == NSFetchedResultsChangeDelete) {
         [self.tableView deleteRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationAutomatic];
-    } else {
-        NSAssert(NO,@"");
+    } else if (type == NSFetchedResultsChangeUpdate) {
+        SAFSafy *safy = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if ([safy.selected boolValue] == YES) {
+            self.selectedSafy = safy;
+            [self.delegate safyPicked:safy];
+        }
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

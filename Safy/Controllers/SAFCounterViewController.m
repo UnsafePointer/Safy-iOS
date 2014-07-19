@@ -11,7 +11,7 @@
 #import "SAFTime.h"
 #import "SAFPickTableViewController.h"
 
-@interface SAFCounterViewController ()
+@interface SAFCounterViewController () <SAFPickTableViewControllerDelegate>
 
 @property (nonatomic, strong) MSWeakTimer *timer;
 @property (nonatomic, strong) SAFSafy *safy;
@@ -25,7 +25,7 @@
 - (void)tick:(id)sender;
 - (void)oops:(id)sender;
 - (void)charts:(id)sender;
-- (void)settings:(id)sender;
+- (void)pick:(id)sender;
 
 @end
 
@@ -63,7 +63,7 @@
                                 initWithImage:[UIImage imageNamed:@"Pick"]
                                 style:UIBarButtonItemStyleBordered
                                 target:self
-                                action:@selector(settings:)];
+                                action:@selector(pick:)];
     UIBarButtonItem *btnCharts = [[UIBarButtonItem alloc]
                                   initWithImage:[UIImage imageNamed:@"Chart"]
                                   style:UIBarButtonItemStyleBordered
@@ -178,15 +178,24 @@
     }];
 }
 
-- (void)settings:(id)sender
+- (void)pick:(id)sender
 {
     SAFPickTableViewController *viewController = [[SAFPickTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    viewController.selectedSafy = self.safy;
+    viewController.delegate = self;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
     [popoverController presentPopoverFromBarButtonItem:sender
                               permittedArrowDirections:UIPopoverArrowDirectionUp
                                               animated:YES];
     self.settingsController = popoverController;
+}
+
+#pragma mark - SAFPickTableViewControllerDelegate
+
+- (void)safyPicked:(SAFSafy *)safy
+{
+    self.safy = safy;
 }
 
 @end
