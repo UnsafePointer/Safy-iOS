@@ -159,8 +159,13 @@
 
 - (void)oops:(id)sender
 {
+    @weakify(self);
+    
     [self.timer invalidate];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        @strongify(self);
+        
         SAFSafy *safy = (SAFSafy *)[localContext objectWithID:[self.safy objectID]];
         SAFTime *time = [SAFTime MR_createInContext:localContext];
         time.startDate = self.safy.currentStartDate;

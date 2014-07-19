@@ -19,4 +19,5 @@
     #import <DateTools/DateTools.h>
     #import <HexColors/HexColor.h>
     #import <FXForms/FXForms.h>
+    #import <libextobjc/EXTScope.h>
 #endif

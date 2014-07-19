@@ -8,4 +8,5 @@ target "Safy" do
   pod 'HexColors', '~> 2.2.1'
   pod 'FXForms', '~> 1.1.6'
   pod 'TSMessages', '~> 0.9.9'
+  pod 'libextobjc', '~> 0.4.0'
 end

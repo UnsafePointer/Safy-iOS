@@ -9,6 +9,7 @@
 #import "SAFCreateSafyFormViewController.h"
 #import "SAFCreateSafyForm.h"
 #import "SAFSafy.h"
+#import "SAFPickTableViewController.h"
 
 @interface SAFCreateSafyFormViewController ()
 

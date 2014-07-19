@@ -58,6 +58,7 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
                                                                         managedObjectContext:[NSManagedObjectContext MR_defaultContext]
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+    [self.fetchedResultsController performFetch:NULL];
 }
 
 - (void)setupNavigationButtons
