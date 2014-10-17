@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18C95A00134849098895DB87 /* libPods-Safy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */; };
+		3F4FBFE219F1ACBB002F7ED1 /* Pods-Safy-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4FBFE119F1ACBB002F7ED1 /* Pods-Safy-acknowledgements.plist */; };
 		A01F4D5D197A822C00B1FC38 /* SAFPickTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5C197A822C00B1FC38 /* SAFPickTableViewController.m */; };
 		A01F4D60197A8C6200B1FC38 /* SAFCreateSafyForm.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D5F197A8C6200B1FC38 /* SAFCreateSafyForm.m */; };
 		A01F4D63197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F4D62197A8D5400B1FC38 /* SAFCreateSafyFormViewController.m */; };
@@ -22,7 +23,6 @@
 		A08A1C89197AE81200B372EF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A1C88197AE81200B372EF /* Social.framework */; };
 		A08A1C8D197AE88C00B372EF /* iLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C8C197AE88C00B372EF /* iLink.m */; };
 		A08A1C8F197AE93500B372EF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A1C8E197AE93500B372EF /* Accounts.framework */; };
-		A08A1C91197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */; };
 		A08A1C97197AEB0700B372EF /* SAFInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C96197AEB0700B372EF /* SAFInfoTableViewController.m */; };
 		A08A1C99197AEB1800B372EF /* SAFInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08A1C98197AEB1800B372EF /* SAFInfoTableViewCell.xib */; };
 		A08A1C9C197AEB6600B372EF /* SAFDeveloperTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1C9B197AEB6600B372EF /* SAFDeveloperTableViewController.m */; };
@@ -40,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		039C51E9FFDD40B68A2AFBB4 /* libPods-Safy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Safy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4FBFE119F1ACBB002F7ED1 /* Pods-Safy-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Safy-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Safy/Pods-Safy-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		4CB49FD63C534493097EAFB5 /* Pods-Safy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safy/Pods-Safy.debug.xcconfig"; sourceTree = "<group>"; };
 		A01F4D5B197A822C00B1FC38 /* SAFPickTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFPickTableViewController.h; path = Controllers/SAFPickTableViewController.h; sourceTree = "<group>"; };
 		A01F4D5C197A822C00B1FC38 /* SAFPickTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFPickTableViewController.m; path = Controllers/SAFPickTableViewController.m; sourceTree = "<group>"; };
 		A01F4D5E197A8C6200B1FC38 /* SAFCreateSafyForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFCreateSafyForm.h; path = Models/SAFCreateSafyForm.h; sourceTree = "<group>"; };
@@ -63,7 +65,6 @@
 		A08A1C8B197AE88C00B372EF /* iLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iLink.h; path = External/iLink/iLink/iLink.h; sourceTree = SOURCE_ROOT; };
 		A08A1C8C197AE88C00B372EF /* iLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iLink.m; path = External/iLink/iLink/iLink.m; sourceTree = SOURCE_ROOT; };
 		A08A1C8E197AE93500B372EF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Safy-acknowledgements.plist"; path = "Pods/Pods-Safy-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		A08A1C95197AEB0700B372EF /* SAFInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFInfoTableViewController.h; path = Controllers/SAFInfoTableViewController.h; sourceTree = "<group>"; };
 		A08A1C96197AEB0700B372EF /* SAFInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFInfoTableViewController.m; path = Controllers/SAFInfoTableViewController.m; sourceTree = "<group>"; };
 		A08A1C98197AEB1800B372EF /* SAFInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SAFInfoTableViewCell.xib; path = Views/SAFInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -85,7 +86,7 @@
 		A0967E4D1951DB6C0083CAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0967E5B1951DF150083CAE1 /* SAFCounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFCounterViewController.h; path = Controllers/SAFCounterViewController.h; sourceTree = "<group>"; };
 		A0967E5C1951DF150083CAE1 /* SAFCounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFCounterViewController.m; path = Controllers/SAFCounterViewController.m; sourceTree = "<group>"; };
-		A201F531754049199F761464 /* Pods-Safy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safy.xcconfig"; path = "Pods/Pods-Safy.xcconfig"; sourceTree = "<group>"; };
+		EDB91857CA5484067A27260B /* Pods-Safy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safy/Pods-Safy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FA68493DE59DF70B87F33B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CB49FD63C534493097EAFB5 /* Pods-Safy.debug.xcconfig */,
+				EDB91857CA5484067A27260B /* Pods-Safy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A08A1C61197ABFAF00B372EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +142,7 @@
 				A0967E181951DAB80083CAE1 /* Safy */,
 				A0967E111951DAB80083CAE1 /* Frameworks */,
 				A0967E101951DAB80083CAE1 /* Products */,
-				A201F531754049199F761464 /* Pods-Safy.xcconfig */,
+				4FA68493DE59DF70B87F33B5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,7 +186,7 @@
 		A0967E191951DAB80083CAE1 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				A08A1C90197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist */,
+				3F4FBFE119F1ACBB002F7ED1 /* Pods-Safy-acknowledgements.plist */,
 				A0967E4E1951DB6C0083CAE1 /* InfoPlist.strings */,
 				A0967E461951DB060083CAE1 /* main.m */,
 				A0967E471951DB060083CAE1 /* Safy-Info.plist */,
@@ -289,8 +299,8 @@
 				A0967E251951DAB80083CAE1 /* Images.xcassets in Resources */,
 				A08A1C63197ABFD100B372EF /* SAFCounterViewController.xib in Resources */,
 				A08A1CA0197AED7B00B372EF /* SAFDeveloperTableViewCell.xib in Resources */,
+				3F4FBFE219F1ACBB002F7ED1 /* Pods-Safy-acknowledgements.plist in Resources */,
 				A08A1C65197AC04000B372EF /* SAFChartViewController.xib in Resources */,
-				A08A1C91197AEA3F00B372EF /* Pods-Safy-acknowledgements.plist in Resources */,
 				A0967E4C1951DB6C0083CAE1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Safy-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safy/Pods-Safy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8DC1456F4614FA1B68DAF9B /* Check Pods Manifest.lock */ = {
@@ -442,7 +452,7 @@
 		};
 		A0967E3C1951DAB80083CAE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A201F531754049199F761464 /* Pods-Safy.xcconfig */;
+			baseConfigurationReference = 4CB49FD63C534493097EAFB5 /* Pods-Safy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,7 +467,7 @@
 		};
 		A0967E3D1951DAB80083CAE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A201F531754049199F761464 /* Pods-Safy.xcconfig */;
+			baseConfigurationReference = EDB91857CA5484067A27260B /* Pods-Safy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
